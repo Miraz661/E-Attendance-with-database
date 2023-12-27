@@ -1,0 +1,566 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+.container {
+    margin: 0 50px;
+    background-color: #8894aa;
+    border-radius: 5px;
+    z-index: -3;
+}
+
+
+.notification{
+    display: none;
+    width: max-content;
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #503333;
+    padding: 10px 20px;
+    border-radius: 5px;
+    color:#fff;
+    z-index: 1999;
+}
+
+.notification.wrong{
+    color:red;
+}
+
+.notification.active{
+    display: block;
+    animation: notify 5s linear forwards;
+}
+
+
+/* pre-loader */
+
+.preloader {
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.body .preloader {
+    display: none;
+}
+
+.preImg {
+    width: 200px;
+    height: 200px;
+    animation: preload 1.5s linear infinite alternate;
+}
+
+
+#main {
+    margin-top: 80px;
+    background-color: #fff;
+    overflow: hidden;
+}
+
+#mainHome{
+    display: none;
+}
+
+.body #mainHome{
+    display: block;
+}
+
+#nav {
+    box-shadow: 0px 3px 5px #55555570;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: #8894aa;
+    z-index: 99;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+    padding: 10px 0;
+}
+
+.centerNav {
+    user-select: none;
+}
+
+.addSt{
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2.5px solid #fff;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 0.2s linear;
+}
+.addSt:hover{
+    background: #fff;
+    color: #666;
+}
+
+.rightNav ul {
+    display: flex;
+    list-style: none;
+}
+
+.rightNav ul li {
+    padding: 0 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.homeNav {
+    position: relative;
+    width: 35px;
+    height: 35px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    transition: all 0.2s linear;
+}
+
+.homeNav:hover{
+    background-color: #fff;
+    color:#666;
+}
+
+.leftNav {
+    color: #fff;
+    font-weight: 600;
+    font-size: 20px;
+
+}
+
+.homeNav {
+    position: relative;
+    z-index: 99;
+}
+
+.homeIcon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.home {
+    width: 100%;
+    padding-top: 50px;
+    overflow: hidden;
+}
+
+
+/* main page */
+
+.main {
+    background: #eeeeee;
+    width: 100%;
+    height: calc(100% - 100px);
+    border-radius: 5px;
+    overflow-y: scroll;
+}
+
+.main::-webkit-scrollbar {
+    display: none;
+}
+
+.head {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #fff;
+    border-radius: 5px;
+}
+
+.title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #444;
+}
+
+.titleSub{
+    font-size: 15px;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+.date {
+    background: #eeeeee;
+    border-radius: 5px;
+    border: 1px solid #444;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 2px 5px;
+    width: max-content;
+    color: #838383;
+}
+
+.mainContent {
+    padding: 10px;
+}
+
+table {
+    width: 100%;
+    text-align: center;
+    border: 2px solid #666;
+}
+
+th {
+    padding: 5px 0;
+    user-select: none;
+}
+
+td {
+    padding: 2px 0;
+}
+
+tr{
+    transition: all 0.2s linear;
+}
+
+tr:hover{
+    background-color: #fff;
+}
+
+tr:hover .fullDetails{
+    text-decoration: underline;
+}
+
+.present {
+    accent-color: rgb(0, 48, 0);
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+
+.absent {
+    accent-color: red;
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+
+.delSt{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border:none;
+    border-top: 1px solid #000;
+    color: #7a0101;
+}
+
+.delSt i{
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #e7e7e7;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+
+
+.btn {
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+button {
+    padding: 3px 15px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #444;
+    cursor: pointer;
+}
+
+.fullDetails:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+
+/* New batch */
+
+
+
+
+#addStudents {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.74);
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+    display: none;
+}
+
+#addStudents.active {
+    display: flex;
+}
+
+.studentInfo {
+    padding: 20px 15px;
+    background-color: #fff;
+    border-radius: 5px;
+    color: #666;
+    border: 1px solid #fff;
+
+}
+
+input {
+    width: 300px;
+    padding: 5px 10px;
+    font-size: 17px;
+    border: none;
+    border-bottom: 2px solid #fff;
+    border-radius: 5px;
+    color: #fff;
+    background-color: #999999;
+    outline: none;
+    padding: 10px;
+    transition: all 0.2s linear;
+}
+
+input:focus {
+    background-color: #666;
+}
+
+input::placeholder {
+    color: #646464;
+}
+
+
+label {
+    color: #666;
+    font-weight: 600;
+}
+
+.addStudentHead {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+}
+
+.addStudentTitle {
+    position: relative;
+    font-size: 25px;
+    font-weight: 600;
+    color: #666;
+}
+
+.addStudentTitle::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50%;
+    height: 2px;
+    background-color: #666;
+}
+
+.addStudentId,.addStudentName,.addBatchNo {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+}
+
+#addStudentBtn,
+.addStudentCancel {
+    font-size: 20px;
+    font-weight: 800px;
+    color: #666;
+    background-color: transparent;
+    width: max-content;
+    padding: 5px 25px;
+    border-radius: 5px;
+    transition: all .2s linear;
+    border-color: blue;
+    align-self: center;
+    cursor: pointer;
+    border: 1px solid #666;
+}
+
+
+#addStudentBtn:active,
+#addStudentBtn:hover,
+.addStudentCancel:active,
+.addStudentCancel:hover {
+    background-color: #666;
+    color: #fff;
+}
+
+
+.addBbtns {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.batchOpt {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.2s linear;
+}
+
+.batchOpt:hover {
+    background: rgb(155, 155, 179);
+}
+
+
+
+/* Delete confirmation */
+
+
+
+#delCon {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.74);
+    color: #fff;
+    display: none;
+    z-index: 100;
+}
+
+#delCon.active {
+    display: flex;
+}
+
+.del {
+    background: #6e6e6e;
+    padding: 10px 20px;
+    border-radius: 5px;
+    width: max-content;
+}
+
+.delTitle {
+    margin-bottom: 20px;
+}
+
+.delTitleTop {
+    font-size: 20px;
+    margin-bottom: 5px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #fff;
+    text-align: center;
+}
+
+.delTitleBot {
+    font-size: 18px;
+}
+
+.delBtns {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.delCancel {
+    border: 1px solid #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.2s linear;
+}
+
+
+.delConf {
+    border: 1px solid #fff;
+    padding: 5px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.2s linear;
+}
+
+.delCancel:hover,
+.delConf:hover {
+    color: #111;
+    background: #fff;
+}
+
+
+@keyframes preload {
+    100%{
+        scale: 0.7;
+        opacity: 0.1;
+    }
+}
+
+@keyframes notify {
+    80%{
+        opacity: 0.5;
+    }
+    90%{
+        opacity: 0.0;
+    }100%{
+        display: none;
+    }
+}
+
+
+
+/* Media */
+
+
+
+@media screen and (max-width: 550px) {
+    .centerNav {
+        display: none;
+    }
+
+    .container {
+        margin: 0 35px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .container {
+        margin: 0 15px;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .container {
+        margin: 0;
+    }
+}

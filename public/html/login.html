@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Attendance/Login</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
+    <script src="../js/login.js" defer></script>
+    <link rel="shortcut icon" href="../images/fav-logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="../css/login.css">
+</head>
+
+<body id="body">
+
+    <div class="preloader">
+        <img src="../images/fav-logo.png" alt="UU logo" class="preImg">
+    </div>
+
+    <section id="main">
+        <div class="main-box">
+            <input type="checkbox" name="" id="chk" aria-hdden="true">
+            <div class="signup">
+                <form id="signupForm">
+                    <label for="chk" aria-hidden="true"> Sign up </label>
+                    <input type="text" name="email" placeholder="Email" required id="signupUsername">
+                    <input type="password" name="pas" placeholder="password" required id="signupPassword">
+                    <input type="password" name="cpas" placeholder="Confirm password" required id="ConfsignupPassword">
+                    <button id="signUp">Sign up</button>
+                </form>
+            </div>
+
+            <div id="login">
+                <form id="loginForm" class="login">
+                    <label for="chk" aria-hidden="true"> Login </label>
+                    <input type="text" name="email" placeholder="Email" required id="loginUsername">
+                    <input type="password" name="pas" placeholder="password" required id="loginPassword">
+                    <button id="loginBtn">Login</button>
+                </form>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>

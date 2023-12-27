@@ -1,0 +1,102 @@
+<!DOCTYPE>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Attendance</title>
+    <link rel="shortcut icon" href="public/images/fav-logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="public/css/home.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+    <script src="public/js/home.js" defer></script>
+</head>
+<body id="body">
+    <div class="preloader">
+        <img src="public/images/fav-logo.png" alt="UU logo" class="preImg">
+    </div>
+    <div class="notification"></div>
+    <section id="mainHome">
+        <section id="delCon">
+            <div class="del">
+                <div class="delTitle">
+                    <div class="delTitleTop">
+                        Are you sure?
+                    </div>
+                    <div class="delTitleBot">
+                        You want to delete this batch?
+                    </div>
+                </div>
+                <div class="delBtns">
+                    <div class="delCancel">Cancel</div>
+                    <div class="delConf">Ok</div>
+                </div>
+            </div>
+        </section>
+        <section id="addBatches">
+            <div class="batchInfo">
+                    <div class="addBatchHead">
+                        <div class="addBatchTitle">Add New Batch</div>
+                    </div>
+                    <div class="addBatchContent">
+                        <div class="addBatchNo">
+                            <label for="number">Batch No.: </label>
+                            <input name="BatchNo" type="number" id="number" placeholder="Enter batch number" required autocomplete="off">
+                        </div>
+                        <div class="addBatchSec">
+                            <label for="addBatchSec">Section: </label>
+                            <input name="BatchSec" type="text" id="addBatchSec" placeholder="Enter section" required autocomplete="off">
+                        </div>
+                        <div class="addBbtns">
+                            <div class="addBatchCancel">Cancel</div>
+                            <input type="submit" value="Create" id="addBatchBtn">
+                        </div>
+                    </div>
+            </div>
+        </section>
+    
+    
+        <section id="nav">
+            <div class="container">
+                <div class="nav">
+                    <div class="leftNav">
+                        Dashboard
+                    </div>
+                    <div class="centerNav">
+                        <h1>E-Attendance</h1>
+                    </div>
+                    <div class="rightNav">
+                        <ul>
+                            <li>
+                                <div class="addBatch">
+                                    <div title="Add Batches" class="add">+</div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="account">
+                                    <div class="accImg">
+                                        <img title="Account" id="accImg" src="public/images/avater.png" alt="">
+                                    </div>
+                                    <div class="logout">Logout</div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+        
+        <section class="main">
+            <div class="batches">
+                <div class="container">
+                    <div class="batchCon">
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
+</body>
+</html>

@@ -1,0 +1,223 @@
+<!DOCTYPE>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Attendance</title>
+    <link rel="shortcut icon" href="/images/fav-logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="../css/batch.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+    <script type="module" defer src="../JS/batch.js"></script>
+</head>
+<body id="body">
+
+    <div class="preloader">
+        <img src="../images/fav-logo.png" alt="UU logo" class="preImg">
+    </div>
+
+    <div class="notification">
+        
+    </div>
+
+    <section id="mainHome">
+        <section id="delCon">
+            <div class="del">
+                <div class="delTitle">
+                    <div class="delTitleTop">
+                        Are you sure?
+                    </div>
+                    <div class="delTitleBot">
+                        You want to delete this batch?
+                    </div>
+                </div>
+                <div class="delBtns">
+                    <div class="delCancel">Cancel</div>
+                    <div class="delConf">Ok</div>
+                </div>
+            </div>
+        </section>
+    
+        <section id="addBatches">
+            <div class="batchInfo">
+                    <div class="addBatchHead">
+                        <div class="addBatchTitle">Add New Course</div>
+                    </div>
+                    <div class="addBatchContent">
+                        <div class="addBatchNo">
+                            <label for="code">Course Code: </label>
+                            <input name="BatchNo" type="text" id="code" placeholder="Enter course code" required autocomplete="off">
+                        </div>
+                        <div class="addBatchSec">
+                            <label for="addBatchSec">Title: </label>
+                            <input name="BatchSec" type="text" id="addBatchSec" placeholder="Enter Title" required autocomplete="off">
+                        </div>
+                        <div class="addBbtns">
+                            <div class="addBatchCancel">Cancel</div>
+                            <input type="submit" value="Create" id="addCourseBtn">
+                        </div>
+                    </div>
+            </div>
+        </section>
+    
+    
+        <section id="nav">
+            <div class="container">
+                <div class="nav">
+                    <div class="leftNav">
+                        <h1>E-Attendance</h1>
+                    </div>
+                    <div class="centerNav">
+                        <h1><span class="batNo"></span> <span class="secNo"></span></h1>
+                    </div>
+                    <div class="rightNav">
+                        <ul>
+                            <li>
+                                <div class="addBatch">
+                                    <div title="Add Batches" class="add">+</div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="homeNav">
+                                    <div class="homeIcon">
+                                        <i class="fa-solid fa-home" id="home"></i>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+        
+        <section class="main">
+            <div class="batches">
+                <div class="container">
+                    <div class="batchCon">
+                        <div class="batch batch1" style="--i:1">
+                            <div class="courseInfo">
+                                <div class="batchNo">CSEC-430</div>
+                                <div class="section">Software BSC CSE Engineering sessional</div>
+                            </div>
+                            <div class="batchOpt" title="delete">
+                                <i class="fa-solid fa-trash"></i>             
+                            </div>
+                        </div>
+                        <div class="batch batch2" style="--i:2">
+                            <div class="courseInfo">
+                                <div class="batchNo">CSEC-430</div>
+                                <div class="section">Software Engineering</div>
+                            </div>
+                            <div class="batchOpt" title="delete">
+                                <i class="fa-solid fa-trash"></i>             
+                            </div>
+                        </div>
+                        <div class="batch batch1" style="--i:3">
+                            <div class="courseInfo">
+                                <div class="batchNo">CSEC-430</div>
+                                <div class="section">Software Engineering</div>
+                            </div>
+                            <div class="batchOpt" title="delete">
+                                <i class="fa-solid fa-trash"></i>             
+                            </div>
+                        </div>
+                        <div class="batch batch2" style="--i:4">
+                            <div class="courseInfo">
+                                <div class="batchNo">CSEC-430</div>
+                                <div class="section">Software Engineering</div>
+                            </div>
+                            <div class="batchOpt" title="delete">
+                                <i class="fa-solid fa-trash"></i>             
+                            </div>
+                        </div>
+                        <div class="batch batch1" style="--i:5">
+                            <div class="courseInfo">
+                                <div class="batchNo">CSEC-430</div>
+                                <div class="section">Software Engineering</div>
+                            </div>
+                            <div class="batchOpt" title="delete">
+                                <i class="fa-solid fa-trash"></i>             
+                            </div>
+                        </div>
+                        <div class="batch batch2" style="--i:6">
+                            <div class="courseInfo">
+                                <div class="batchNo">CSEC-430</div>
+                                <div class="section">Software Engineering</div>
+                            </div>
+                            <div class="batchOpt" title="delete">
+                                <i class="fa-solid fa-trash"></i>             
+                            </div>
+                        </div>
+                        <div class="batch batch2" style="--i:7">
+                            <div class="courseInfo">
+                                <div class="batchNo">CSEC-430</div>
+                                <div class="section">Software Engineering</div>
+                            </div>
+                            <div class="batchOpt" title="delete">
+                                <i class="fa-solid fa-trash"></i>             
+                            </div>
+                        </div>
+                        <div class="batch batch1" style="--i:8">
+                            <div class="courseInfo">
+                                <div class="batchNo">CSEC-430</div>
+                                <div class="section">Software Engineering</div>
+                            </div>
+                            <div class="batchOpt" title="delete">
+                                <i class="fa-solid fa-trash"></i>             
+                            </div>
+                        </div>
+                        <div class="batch batch2" style="--i:9">
+                            <div class="courseInfo">
+                                <div class="batchNo">CSEC-430</div>
+                                <div class="section">Software Engineering</div>
+                            </div>
+                            <div class="batchOpt" title="delete">
+                                <i class="fa-solid fa-trash"></i>             
+                            </div>
+                        </div>
+                        <div class="batch batch2" style="--i:10">
+                            <div class="courseInfo">
+                                <div class="batchNo">CSEC-430</div>
+                                <div class="section">Software Engineering</div>
+                            </div>
+                            <div class="batchOpt" title="delete">
+                                <i class="fa-solid fa-trash"></i>             
+                            </div>
+                        </div>
+                        <div class="batch batch1" style="--i:11">
+                            <div class="courseInfo">
+                                <div class="batchNo">CSEC-430</div>
+                                <div class="section">Software Engineering</div>
+                            </div>
+                            <div class="batchOpt" title="delete">
+                                <i class="fa-solid fa-trash"></i>             
+                            </div>
+                        </div>
+                        <div class="batch batch2" style="--i:12">
+                            <div class="courseInfo">
+                                <div class="batchNo">CSEC-430</div>
+                                <div class="section">Software Engineering</div>
+                            </div>
+                            <div class="batchOpt" title="delete">
+                                <i class="fa-solid fa-trash"></i>             
+                            </div>
+                        </div>
+                        <div class="batch batch2" style="--i:12">
+                            <div class="courseInfo">
+                                <div class="batchNo">CSEC-430</div>
+                                <div class="section">Software Engineering</div>
+                            </div>
+                            <div class="batchOpt" title="delete">
+                                <i class="fa-solid fa-trash"></i>             
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
+</body>
+</html>

@@ -1,0 +1,605 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+.container {
+    margin: 0 50px;
+    background-color: #8894aa;
+    border-radius: 5px;
+    z-index: -3;
+}
+
+
+/* pre-loader */
+
+.preloader {
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.body .preloader {
+    display: none;
+}
+
+.preImg {
+    width: 200px;
+    height: 200px;
+    animation: preload 1.5s linear infinite alternate;
+}
+
+.body #mainHome{
+    display: block;
+}
+
+#mainHome{
+    display: none;
+}
+
+
+/* Notification */
+
+
+
+.notification{
+    display: none;
+    width: max-content;
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 20px;
+    border-radius: 5px;
+    color:#fff;
+    background: #5d7db9;
+    z-index: 1999;
+}
+
+.notification.wrong{
+    background: #ff0000;
+    color:white;
+}
+
+.notification.active{
+    display: block;
+    animation: notify 5s linear forwards;
+}
+
+
+@keyframes notify {
+    70%{
+        opacity: 1;
+    }
+    80%{
+        opacity: 0.5;
+    }
+    90%{
+        opacity: 0.0;
+    }100%{
+        display: none;
+    }
+}
+
+.main {
+    margin-top: 80px;
+    background-color: white;
+}
+
+#nav {
+    box-shadow: 0px 3px 5px #55555570;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: #8894aa;
+    z-index: 99;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+    padding: 10px 0;
+}
+
+.centerNav {
+    user-select: none;
+}
+
+.rightNav ul {
+    display: flex;
+    list-style: none;
+}
+
+.rightNav ul li {
+    padding: 0 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.addBatch,
+.account,
+.addbatch {
+    position: relative;
+    width: 35px;
+    height: 35px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+}
+
+.add {
+    position: absolute;
+    display: block;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 30px;
+}
+
+.addBatch{
+    transition: all .2s linear;
+}
+
+.addBatch:hover {
+    background: #fff;
+    color:#8894aa;
+}
+
+.leftNav {
+    color: #fff;
+    font-weight: 600;
+    font-size: 30px;
+
+}
+
+.account {
+    position: relative;
+    z-index: 99;
+}
+
+.accImg {
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+#accImg {
+    width: 150%;
+    height: 150%;
+}
+
+.logout {
+    position: absolute;
+    top: 120%;
+    left: -100%;
+    background: #fff;
+    color: #222;
+    padding: 5px 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    display: none;
+    transition: all 0.2s linear;
+}
+
+.logout:hover {
+    box-shadow: 2px 2px 5px 1px #555;
+}
+
+.active.logout {
+    display: block;
+}
+
+.home {
+    width: 100%;
+    padding-top: 50px;
+    overflow: hidden;
+}
+
+.batchCon {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 10px 0;
+    position: relative;
+    z-index: 1;
+    height: calc(100% - 100px);
+    overflow-y: scroll;
+}
+
+.batchCon::-webkit-scrollbar {
+    display: none;
+}
+
+.batchCon::after {
+    content: "";
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 30%;
+    height: 60%;
+    background-image: url(../images/logoWhite.png);
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+    opacity: .5;
+}
+
+.batch {
+    width: 250px;
+    height: 150px;
+    background-color: rgb(0, 47, 255);
+    padding: 5px 10px;
+    margin: 10px 20px;
+    color: white;
+    position: relative;
+    background-position: center;
+    background-size: cover;
+    overflow: hidden;
+    z-index: 0;
+    transition: all 0.2s linear;
+    border: 0px solid #6ad2ff;
+    border-radius: 10px;
+    z-index: 2;
+    transform: translateY(40px);
+    animation: load 1s linear forwards;
+    animation-delay: calc(var(--i)*.1s);
+    opacity: 0;
+}
+
+.batch:hover {
+    border: 1px solid #6ad2ff;
+    border-radius: 0px;
+    scale: 1.02;
+}
+
+.batInf {
+    width: max-content;
+    cursor: pointer;
+    transition: all 0.2s linear;
+}
+
+.batch:hover .batInf {
+    text-decoration: underline;
+}
+
+.batch:active {
+    scale: .97;
+}
+
+.batchNo {
+    font-size: 35px;
+    font-weight: 600;
+}
+
+.batch::after {
+    content: "";
+    position: absolute;
+    top: -20px;
+    left: 20px;
+    width: 100%;
+    height: 100%;
+    transform: rotate(55deg);
+    transform-origin: left top;
+    background: #6ad2ff;
+    z-index: -1;
+}
+
+.batch::before {
+    content: "";
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 100%;
+    height: 100%;
+    transform: rotate(-55deg);
+    transform-origin: left bottom;
+    background: #6ad2ff;
+    z-index: -1;
+}
+
+
+
+                            /* New batch */
+
+
+
+
+#addBatches {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.74);
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+    display: none;
+}
+
+#addBatches.active {
+    display: flex;
+}
+
+.batchInfo {
+    padding: 20px 15px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    color: white;
+    border: 1px solid #fff;
+}
+
+input {
+    width: 300px;
+    padding: 5px 10px;
+    font-size: 17px;
+    border: none;
+    border-bottom: 2px solid #fff;
+    border-radius: 5px;
+    color: #fff;
+    background-color: #bbbbbb;
+    outline: none;
+    padding: 10px;
+    transition: all 0.2s linear;
+}
+
+input:focus {
+    border: 1px solid #666;
+    background-color: #666;
+}
+
+input::placeholder {
+    color: #7c7c7c;
+}
+
+input:focus::placeholder{
+    color: #afafaf;
+}
+
+
+label {
+    color: #666;
+    font-weight: 600;
+}
+
+.addBatchHead {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+}
+
+.addBatchTitle {
+    position: relative;
+    font-size: 25px;
+    font-weight: 600;
+    color: #666;
+}
+
+.addBatchTitle::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50%;
+    height: 2px;
+    background-color: #666;
+}
+
+.addBatchNo {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+}
+
+.addBatchSec {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+}
+
+#addBatchBtn,
+.addBatchCancel {
+    font-size: 20px;
+    font-weight: 800px;
+    color: #666;
+    background-color: transparent;
+    width: max-content;
+    padding: 5px 25px;
+    border-radius: 5px;
+    transition: all .2s linear;
+    border-color: blue;
+    align-self: center;
+    cursor: pointer;
+    border: 1px solid #666;
+}
+
+
+#addBatchBtn:active,
+#addBatchBtn:hover,
+.addBatchCancel:active,
+.addBatchCancel:hover {
+    background-color: #666;
+    color: #fff;
+}
+
+
+.addBbtns {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.batchOpt {
+    position: absolute;
+    bottom: 10px;
+    width: 30px;
+    height: 30px;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.2s linear;
+    z-index: 3;
+}
+
+.batchOpt:hover {
+    background: rgb(155, 155, 179);
+}
+
+
+
+/* Delete confirmation */
+
+
+
+#delCon {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.74);
+    color: #fff;
+    display: none;
+    z-index: 100;
+}
+
+#delCon.active {
+    display: flex;
+}
+
+.del {
+    background: #6e6e6e;
+    padding: 10px 20px;
+    border-radius: 5px;
+    width: max-content;
+}
+
+.delTitle {
+    margin-bottom: 20px;
+}
+
+.delTitleTop {
+    font-size: 20px;
+    margin-bottom: 5px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #fff;
+    text-align: center;
+}
+
+.delTitleBot {
+    font-size: 18px;
+}
+
+.delBtns {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.delCancel {
+    border: 1px solid #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.2s linear;
+}
+
+
+.delConf {
+    border: 1px solid #fff;
+    padding: 5px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.2s linear;
+}
+
+.delCancel:hover,
+.delConf:hover {
+    color: #111;
+    background: #fff;
+}
+
+
+@keyframes preload {
+    100%{
+        scale: 0.7;
+        opacity: 0.1;
+    }
+}
+
+
+@keyframes load {
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+
+/* Media */
+
+
+
+@media screen and (max-width: 550px) {
+    .centerNav {
+        display: none;
+    }
+
+    .batchCon::after {
+        width: 40%;
+        height: 40%;
+    }
+
+    .container {
+        margin: 0 35px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .batchCon::after {
+        width: 30%;
+        height: 30%;
+    }
+
+    .container {
+        margin: 0 15px;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .batchInfo {
+        width: 100%;
+    }
+
+    input {
+        padding: 5px;
+        font-size: 17px;
+        width: 250px;
+    }
+
+    .container {
+        margin: 0;
+    }
+}
